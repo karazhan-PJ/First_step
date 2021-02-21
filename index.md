@@ -10,3 +10,8 @@ language : 파이썬
 
 
 
+##### 2.21 
+Python 3.6.8 Ver
+Django 설치 및 서버 기동 완료
+
+
