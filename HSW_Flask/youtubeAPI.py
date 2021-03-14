@@ -2,16 +2,12 @@ import pandas as pd
 from youtube_api import YouTubeDataAPI
 
 class RefineChannelInfo: 
-    def __init__(self):
-	    #print(apiKey)
-        print("init")
 
-    #def RetrieveInfo():
-       # yt=YouTubeDataAPI(api_key)
-       # tech_reviewer_search = yt.search(q='tech review', max_results = 5, order_by = 'viewCount', safe_search=None, 
-        #                     relevance_language='en',
-         #                    video_duration = 'any', 
-          #                   search_type='channel')
+    def retrieveInfo(self, query, api_key):
+        youtube=YouTubeDataAPI(api_key)
+        result = youtube.search(q=query, order_by = 'viewCount', max_results = 5, relevance_language= 'en' ,safe_search=None, search_type='channel')
+        return result
+            
 
 
 

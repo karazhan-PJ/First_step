@@ -98,19 +98,17 @@
     }
   })
   
+  var result = JSON.parse('{{data | tojson}}');
+
+  alert(result)
   // bootstrap the demo
   var demo = new Vue({
     el: '#demo',
     delimiters : ['[[', ']]'],
     data: {
       searchQuery: '',
-      gridColumns: ['name', 'power'],
-      gridData: [
-        { name: 'Chuck Norris', power: Infinity },
-        { name: 'Bruce Lee', power: 9000 },
-        { name: 'Jackie Chan', power: 7000 },
-        { name: 'Jet Li', power: 8000 }
-      ]
+      gridColumns: ['video_title', 'video_description'],
+      gridData: [result]
     }
   })
   
