@@ -32,7 +32,7 @@ class RetrieveChannelInfo(Resource):
 	    #refineChannelInfo = RefineChannelInfo()
 
         headers = {'Content-Type':"text/html"}
-        return make_response(render_template('home.html'),200,headers)
+        return make_response(render_template('table.html'),200,headers)
 
 
 api.add_resource(RetrieveChannelInfo, '/youtube/channelList')
