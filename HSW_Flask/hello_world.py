@@ -1,12 +1,14 @@
 from flask import Flask
 from flask_restful import Resource, Api
 from flask import request
+from flask import render_template, make_response
 
 from youtubeAPI import RefineChannelInfo
 
-
 app = Flask(__name__)
 api = Api(app)
+
+apiKey = ''
 
 """ Home Directory
 	
@@ -19,18 +21,18 @@ api = Api(app)
 def hello_world():
 	return 'Youtube 댓글 분석기 그 위대한 시작...'
 
+
 """ RefineChannelInfo
     
     Youtube Api Channel Response 정제 Class
 
 """ 
-
-apiKey = ''
 class RetrieveChannelInfo(Resource):
     def get(self):
-	    refineChannelInfo = RefineChannelInfo()
-	    refineChannelInfo.mainPage()
-        
+	    #refineChannelInfo = RefineChannelInfo()
+
+        headers = {'Content-Type':"text/html"}
+        return make_response(render_template('home.html'),200,headers)
 
 
 api.add_resource(RetrieveChannelInfo, '/youtube/channelList')
