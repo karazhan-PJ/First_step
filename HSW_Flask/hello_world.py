@@ -33,7 +33,7 @@ class RetrieveChannelInfo(Resource):
     def get(self):
         hearders = {'Content-Type':'text/html'}
 
-        refineChannelInfo = RefineChannelInfo()
+        refineChannelInfo = RefineChannelInfo(apikey)
         result_search = refineChannelInfo.retrieveInfo(q, apiKey)
         print(result_search)
 
@@ -50,6 +50,8 @@ class RetrieveChannelInfo(Resource):
 
 
 api.add_resource(RetrieveChannelInfo, '/youtube/channelList')
+
+
 	
 if __name__ == '__main__':
 
