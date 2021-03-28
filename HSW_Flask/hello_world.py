@@ -33,26 +33,19 @@ class RetrieveChannelInfo(Resource):
     def get(self):
         hearders = {'Content-Type':'text/html'}
 
-        refineChannelInfo = RefineChannelInfo(apikey)
+        refineChannelInfo = RefineChannelInfo()
         result_search = refineChannelInfo.retrieveInfo(q, apiKey)
         print(result_search)
 
         if len(result_search) > 0:
-            #for idx,result in enumerate(result_search):
             result = result_search[0]
-
-            #for key in result.keys():
-            #    print(key, ":",result[key])
-
             return make_response(render_template('table.html',data = result),200,hearders)
 
         return make_response(render_template('home.html'),200,hearders)         
 
-
 api.add_resource(RetrieveChannelInfo, '/youtube/channelList')
 
 
-	
 if __name__ == '__main__':
 
     apiKey = input("API KEY를 입력하세요 :: ")

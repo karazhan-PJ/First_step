@@ -29,6 +29,14 @@
       </table>
     </script>
 
+  <form id="search">
+    Search <input>
+  </form>
+  <div id="example-1">
+    <button v-on:click="counter += 1">Add 1</button>
+    <p>위 버튼을 클릭한 횟수는 {{ counter }} 번 입니다.</p>
+  </div>
+
   <!-- demo root element -->
   <div id="demo">
     <form id="search">
@@ -111,6 +119,17 @@
       gridData: [result]
     }
   })
+
+
+  var example1 = new Vue({
+      el: '#example-1',
+      data: {
+        counter: 0
+      }
+  })
+  
+
+      
   
   </script>
   </body>
