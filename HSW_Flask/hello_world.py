@@ -25,9 +25,7 @@ def hello_world():
 
 
 """ RefineChannelInfo
-    
     Youtube Api Channel Response 정제 Class
-
 """ 
 class RetrieveChannelInfo(Resource):
     def get(self):
