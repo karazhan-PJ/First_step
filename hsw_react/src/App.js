@@ -1,10 +1,8 @@
 import axios from 'axios';
 
-
 function App() {
-  console.log("진입");
   const url = "http://127.0.0.1:5000/youtube/channelList";
-  axios.get(url, { params: { product: "aaa" } })
+  axios.get(url)
     .then(function(response) {
         console.log("성공");
     })

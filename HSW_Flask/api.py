@@ -4,14 +4,20 @@ from flask import request
 
 from youtubeAPI import RefineChannelInfo
 import numpy as np
+import json
 
 app = Flask(__name__)
 api = Api(app)
 
 class RetrieveChannelInfo(Resource):
     def get(self):
-        print("Connect Check")
+        #refineChannelInfo = RefineChannelInfo()
+        #result = refineChannelInfo.retrieveInfo("침착맨", )
+        result = '{"video_id": "None"}' 
+        dict1 = json.loads(result)
 
+        print(dict1)
+        return dict1
 
 api.add_resource(RetrieveChannelInfo, '/youtube/channelList')
 if __name__ == '__main__':
