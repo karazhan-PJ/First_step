@@ -13,7 +13,7 @@ const ManageTable = (props) => {
         "video_thumbnail"
     ];
 
-    const [tableData, setTableData] = useState([getManageApplication(1)]);
+    const [tableData, setTableData] = useState([getManageApplication('침착맨')]);
 
     return (
         <>

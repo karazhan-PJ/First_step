@@ -12,11 +12,11 @@ api = Api(app)
 class RetrieveChannelInfo(Resource):
     def get(self):
         refineChannelInfo = RefineChannelInfo()
-        result = refineChannelInfo.retrieveInfo("침착맨", )
+        #result = refineChannelInfo.retrieveInfo(request.args.get("query"), )
         #result = '{"video_id": "None"}' 
         #dict1 = json.loads(result)
 
-        print(result)
+        print(request.args.get("query"))
         #print(dict1)
         #return dict1
 
