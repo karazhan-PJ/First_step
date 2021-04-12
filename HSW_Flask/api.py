@@ -11,13 +11,14 @@ api = Api(app)
 
 class RetrieveChannelInfo(Resource):
     def get(self):
-        #refineChannelInfo = RefineChannelInfo()
-        #result = refineChannelInfo.retrieveInfo("침착맨", )
-        result = '{"video_id": "None"}' 
-        dict1 = json.loads(result)
+        refineChannelInfo = RefineChannelInfo()
+        result = refineChannelInfo.retrieveInfo("침착맨","AIzaSyA0xZ5whsLAcleAFmDSwjwSUBaqX607GMs" )
+        #result = '{"video_id": "None"}' 
+        #dict1 = json.loads(result)
 
-        print(dict1)
-        return dict1
+        print(result)
+        #print(dict1)
+        #return dict1
 
 api.add_resource(RetrieveChannelInfo, '/youtube/channelList')
 if __name__ == '__main__':
