@@ -1,9 +1,11 @@
-//import 'bootstrap/dist/css/bootstrap.min.css';
-
 import React, { useState, useEffect } from "react";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Table from 'react-bootstrap/Table'
+
+
 import { getManageApplication } from './api';
 import TableRow from "./TableRow";
-//import Table from 'react-bootstrap/Table'
 
 const ManageTable = (props) => {
     const headerMeta = [
@@ -18,7 +20,7 @@ const ManageTable = (props) => {
         <h3>Manage Table</h3>
         <div>
             {tableData.length !== 0 && (
-            <table>
+            <Table striped bordered hover>
                 <thead>
                 <tr>
                    {headerMeta.map(i=><th>{i}</th>)}
@@ -30,7 +32,7 @@ const ManageTable = (props) => {
                 }
                 )}
                 </tbody>
-            </table>
+            </Table>
             )}
         </div>
         </>

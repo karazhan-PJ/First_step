@@ -6,8 +6,8 @@ const TableRow = ({ key, data}) => {
     return (
         <>
         <tr key={key}>
-            <td>{RowData.instance}</td>
-            <td>{RowData.application}</td>
+            <td><img src={RowData.thumbnail} class="thumbnail"/></td>
+            <td>{RowData.title}</td>
         </tr>
         </>
     )
