@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Table from 'react-bootstrap/Table'
 
+import InputBtn from './InputBtn'
+
 
 import { getManageApplication } from './api';
 import TableRow from "./TableRow";
@@ -17,6 +19,7 @@ const ManageTable = (props) => {
 
     return (
         <>
+        <InputBtn/>
         <h3>Manage Table</h3>
         <div>
             {tableData.length !== 0 && (
