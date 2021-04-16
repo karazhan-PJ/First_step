@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getManageApplication = (userId) => {
     // axios 
-    const url = "http://127.0.0.1:5000/youtube/channelList";
+    /*const url = "http://127.0.0.1:5000/youtube/channelList";
     axios.get(url, {
         params: {
             query: userId
@@ -13,7 +13,7 @@ export const getManageApplication = (userId) => {
     })
     .catch(function(error) {
         console.log("실패");
-    })
+    })*/
 
    const result = '{"title": "Dummy Data","thumbnail": "https://yt3.ggpht.com/ytc/AAUvwniqXEIYoNP_MJXZZblrAaQwddFaQlvFDn2XXS_p=s800-c-k-c0xffffffff-no-rj-mo"}';
   
