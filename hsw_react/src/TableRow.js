@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-const TableRow = ({ key, data}) => {
+const TableRow = ({data}) => {
+
     const [RowData, setRowData] = useState(data);
+
+    useEffect(() => {
+        setRowData(data);
+    });
 
     return (
         <>
-        <tr key={key}>
-            <td><img src={RowData.thumbnail} class="thumbnail"/></td>
+        <tr>
+            <td><img src={RowData.thumbnail} id="thumbnail"/></td>
             <td>{RowData.title}</td>
         </tr>
         </>

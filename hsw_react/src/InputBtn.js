@@ -1,29 +1,22 @@
 import React, { useState, useEffect, Component } from "react";
 import Button from 'react-bootstrap/Button';
 
-class UserInput extends Component {
+const UserInput = () => {
+  const [name, setName] = useState(0);
 
-  state = {
-    id: '',
-    password: ''
+  const change = (e) => {
+    setName = e.targer.value;
   }
-  /* input value 변경 ==> onChange */
-  appChange = (e) => {
-    /*this.setState({
-      id: e.target.value
-    });*/
-      
-      alert('안녕');
+  const appChange = () => {
+    alert();
   }
 
-    render(){
-        return (
-            <>
-            <Button variant="primary" onClick={this.appChange}>전송1</Button>{' '}
-            <input type="text" />
-            </>
-            )
-    }                 
+    return (
+        <>
+        <Button variant="primary" onClick={appChange}>전송1</Button>{' '}
+        <input type="text" onChange={change} />
+        </>
+    )                
 }
 
 export default UserInput;

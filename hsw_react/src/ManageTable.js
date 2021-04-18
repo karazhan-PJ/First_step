@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Table from 'react-bootstrap/Table'
-
-import InputBtn from './InputBtn'
-
+import Button from 'react-bootstrap/Button';
 
 import { getManageApplication } from './api';
 import TableRow from "./TableRow";
+
 
 const ManageTable = (props) => {
     const headerMeta = [
@@ -15,27 +14,39 @@ const ManageTable = (props) => {
         "video_thumbnail"
     ];
 
-    const [tableData, setTableData] = useState([getManageApplication('침착맨')]);
+    const [tableData, setTableData] = useState([]);
+
+    let input = null;
+    const change = (e) => {
+       input = e.target.value;
+    }
+
+    const appChange = () => {
+        let result = getManageApplication(input);
+        setTableData([result]);
+    }
 
     return (
         <>
-        <InputBtn/>
+        <Button variant="primary" onClick={appChange}>전송1</Button>{' '}
+        <input type="text" onChange={change} />
+
         <h3>Manage Table</h3>
         <div>
             {tableData.length !== 0 && (
-            <Table striped bordered hover>
-                <thead>
-                <tr>
-                   {headerMeta.map(i=><th>{i}</th>)}
-                </tr>
-                </thead>
-                <tbody>
-                {tableData.map((d, i) => {
-                    return (<TableRow key={i} data={d}/>);
-                }
-                )}
-                </tbody>
-            </Table>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            {headerMeta.map(i=><th>{i}</th>)}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableData.map(d => {
+                            return (<TableRow data={d}/>);
+                        }
+                        )}
+                    </tbody>
+                </Table>
             )}
         </div>
         </>
