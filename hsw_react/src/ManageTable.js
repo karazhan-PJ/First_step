@@ -8,6 +8,7 @@ import { getManageApplication } from './api';
 import TableRow from "./TableRow";
 
 
+// JenkIns 배포 테스트
 const ManageTable = (props) => {
     const headerMeta = [
         "channel_title",
