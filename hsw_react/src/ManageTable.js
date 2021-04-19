@@ -7,8 +7,6 @@ import Button from 'react-bootstrap/Button';
 import { getManageApplication } from './api';
 import TableRow from "./TableRow";
 
-
-// JenkIns 배포 테스트1
 const ManageTable = (props) => {
     const headerMeta = [
         "channel_title",
@@ -29,7 +27,7 @@ const ManageTable = (props) => {
 
     return (
         <>
-        <Button variant="primary" onClick={appChange}>전송1</Button>{' '}
+        <Button variant="primary" onClick={appChange}>전송</Button>{' '}
         <input type="text" onChange={change} />
 
         <h3>Manage Table</h3>
