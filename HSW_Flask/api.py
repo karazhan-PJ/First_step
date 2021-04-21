@@ -12,7 +12,10 @@ api = Api(app)
 class RetrieveChannelInfo(Resource):
     def get(self):
         
-        print("aa")
+        print("aaa")
+        print(request.values.getlist("query"))
+        print("aab")
+        
         
         #refineChannelInfo = RefineChannelInfo()
         #result = refineChannelInfo.retrieveInfo(request.args.get("query"), )
