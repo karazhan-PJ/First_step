@@ -1,7 +1,5 @@
-from flask import Flask
+from flask import Flask,request
 from flask_restful import Resource, Api
-from flask import request
-
 from youtubeAPI import RefineChannelInfo
 import numpy as np
 import json
