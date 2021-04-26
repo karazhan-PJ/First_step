@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const getManageApplication = (query) => {
+    console.log(query);
     // axios 
     const url = "http://127.0.0.1:5000/youtube/channelList";
     axios.get(url, {
