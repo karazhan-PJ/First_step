@@ -5,7 +5,7 @@ import pandas as pd
 class RefineChannelInfo: 
 
     def retrieveInfo(self, query, api_key):
-        result = '{"title":"efefe" , "aaaa": "aaa"}'
+        result = '{"title":"efefe" , "thumbnail": "aaa"}'
         return result
                 
         

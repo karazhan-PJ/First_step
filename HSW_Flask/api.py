@@ -18,15 +18,15 @@ class RetrieveChannelInfo(Resource):
         result = refineChannelInfo.retrieveInfo(query,"")
         dict1 = json.loads(result)
         
+        # response 객체 생성 및 Header 세팅
         resp = make_response(dict1)
         resp.headers["Access-Control-Allow-Origin"] = "*"
         
         return resp
 
-
 api.add_resource(RetrieveChannelInfo, '/youtube/channelList')
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000, use_reloader=False, debug=False)
 
 
