@@ -1,4 +1,4 @@
-from flask import Flask,request,Response
+from flask import Flask,request,make_response
 from flask_restful import Resource, Api
 from youtubeAPI import RefineChannelInfo
 import numpy as np
@@ -10,6 +10,7 @@ api = Api(app)
 class RetrieveChannelInfo(Resource):
     def get(self):
 
+        # 쿼리 받아옴
         query = request.values.getlist("query")
         print(query)
 
@@ -17,11 +18,11 @@ class RetrieveChannelInfo(Resource):
         result = refineChannelInfo.retrieveInfo(query,"")
         dict1 = json.loads(result)
         
-        resp = flask.Response()
+        resp = make_response(dict1)
         resp.headers["Access-Control-Allow-Origin"] = "*"
-        resp.set_data(dict1)
         
         return resp
+
 
 api.add_resource(RetrieveChannelInfo, '/youtube/channelList')
 
