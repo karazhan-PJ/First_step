@@ -20,8 +20,9 @@ const ManageTable = (props) => {
        input = e.target.value;
     }
 
-    const appChange = () => {
-        let result = getManageApplication(input);
+    const appChange = async () => {
+        let result = await getManageApplication(input);
+        alert(JSON.stringify(result));
         setTableData([result]);
     }
 
