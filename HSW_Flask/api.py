@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 api = Api(app)
-apiKey = "AIzaSyA0xZ5whsLAcleAFmDSwjwSUBaqX607GMs"
+apiKey = ""
 
 class RetrieveChannelInfo(Resource):
     def get(self):
