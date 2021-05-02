@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const TableRow = ({data}) => {
+const TableRow = ({key,data}) => {
 
     const [RowData, setRowData] = useState(data);
 

@@ -22,7 +22,6 @@ const ManageTable = (props) => {
 
     const appChange = async () => {
         let result = await getManageApplication(input);
-        alert(JSON.stringify(result));
         setTableData([result]);
     }
 
@@ -41,8 +40,8 @@ const ManageTable = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {tableData.map(d => {
-                            return (<TableRow data={d}/>);
+                        {tableData.map((d,i) => {
+                            return (<TableRow key={i} data={d}/>);
                         }
                         )}
                     </tbody>

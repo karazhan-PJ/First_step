@@ -6,6 +6,7 @@ import json
 
 app = Flask(__name__)
 api = Api(app)
+apiKey = "AIzaSyA0xZ5whsLAcleAFmDSwjwSUBaqX607GMs"
 
 class RetrieveChannelInfo(Resource):
     def get(self):
@@ -15,8 +16,8 @@ class RetrieveChannelInfo(Resource):
         print(query)
 
         refineChannelInfo = RefineChannelInfo()
-        result = refineChannelInfo.retrieveInfo(query,"")
-        dict1 = json.loads(result)
+        dict1 = refineChannelInfo.retrieveInfo(query,apiKey)
+        #dict1 = json.loads(result)
         
         # response 객체 생성 및 Header 세팅
         resp = make_response(dict1)
